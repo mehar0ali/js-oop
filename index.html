@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+  
+              // JavaSript Object Oriented Programming 
+              // Four Main Concpets
+              // Excapsulation, Inheritance, Abstraction and Polymorphism
+
+              
+
+            // Encapsulation example
+                class Car {
+                constructor(make, model) {
+                    this.make = make;
+                    this.model = model;
+                    this.speed = 0;
+                }
+
+                accelerate() {
+                    this.speed += 10;
+                    console.log(`The ${this.make} ${this.model} accelerated to ${this.speed} km/h.`);
+                }
+
+                brake() {
+                    this.speed -= 5;
+                    console.log(`The ${this.make} ${this.model} slowed down to ${this.speed} km/h.`);
+                }
+                }
+
+                const myCar = new Car('Toyota', 'Camry');
+                myCar.accelerate();  // Output: The Toyota Camry accelerated to 10 km/h.
+                myCar.brake();       // Output: The Toyota Camry slowed down to 5 km/h.
+
+
+
+
+
+
+
+
+                // Inheritance example
+                class Animal {
+                constructor(name) {
+                    this.name = name;
+                }
+
+                eat() {
+                    console.log(`${this.name} is eating.`);
+                }
+                }
+
+                class Dog extends Animal {
+                bark() {
+                    console.log(`${this.name} is barking.`);
+                }
+                }
+
+                const myDog = new Dog('Buddy');
+                myDog.eat();  // Output: Buddy is eating.
+                myDog.bark(); // Output: Buddy is barking.
+
+
+
+
+
+
+
+                // Abstraction example
+                class BankAccount{
+                  constructor(accountNumber, accountHolder){
+                      this.accountNumber = accountNumber
+                      this.accountHolder = accountHolder
+                      this.balance = 0
+                }
+
+                  deposit(amount){
+                      this.balance += amount;
+                      console.log(`add ${amount} to ${this.accountNumber}`);
+                  }
+
+                  withdraw(amount){
+                      if(amount <= this.balance){
+                          this.balance -= amount;
+                          console.log(`Withdraw ${amount} from ${this.accountNumber}`);
+                      }else{
+                          console.log(`Insufficient amount in ${this.accountNumber}`);
+                          }
+
+                }
+
+                  getBalance() {
+                  console.log(`Balance of account ${this.accountNumber}: ${this.balance}`);
+                  return this.balance;
+                }
+                    }
+
+                  const account = new BankAccount('A001', 'John Doe')
+                  account.deposit(500) // output: add 500 to A001
+                  account.withdraw(100) // output: Withdraw 100 from A001
+                  account.getBalance() // output: Balance of account A001: 400
+
+
+
+
+
+
+
+
+
+
+                  // Polymorphism example
+                  class Hamza{
+                    going(){
+                      console.log('Hamza is going to school');
+                    }
+                  }
+
+                  class Naveed extends Hamza{
+                    going(){
+                      console.log('Naveed is also going to school');
+                    }
+                  }
+
+                  class Ali extends Naveed{
+                    going(){
+                      console.log('Ali is also going to school');
+                    }
+                  }
+
+                  class Zain extends Ali{
+                    going(){
+                      console.log('Zain is also going to school');
+                    }
+                  }
+
+                  const hamza = new Hamza()
+                  const naveed = new Naveed()
+                  const ali = new Ali()
+                  const zain = new Zain()
+                   
+                  hamza.going() // output: Hamza is going to school
+                  naveed.going() // output: Naveed is also going to school
+                  ali.going() // output: Ali is also going to school
+                  zain.going() // output: Zain is also going to school
+
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
